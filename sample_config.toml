@@ -1,0 +1,4 @@
+port = 8888
+query = '#random'
+link_url = 'http://localhost:8080'
+link_token = '<TOKEN_HERE>'
