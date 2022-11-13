@@ -15,6 +15,9 @@ class Websites:
     def __init__(self):
         self._websites = []
 
+    def __len__(self):
+        return len(self._websites)
+
     def add(self, website: Website):
         self._websites.append(website)
 

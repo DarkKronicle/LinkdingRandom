@@ -16,10 +16,12 @@ class RandomWebsiteApp:
         self.query = query
 
     async def rebuild_websites(self):
+        self.last_update = datetime.now()
         self.websites = Websites()
         bookmarks = await self.client.bookmarks.async_get_all(query=self.query)
         for b in bookmarks['results']:
             self.websites.add(Website(b['url'], 1))
+        print("Rebuilt websites with " + str(len(self.websites)))
 
     def get_random_website(self):
         return self.websites.get_random()
